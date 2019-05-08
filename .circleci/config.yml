@@ -26,9 +26,6 @@ jobs:
           name: Linting
           command: npm run lint
       - run:
-          name: Testing
-          command: npm run test:client
-      - run:
           name: Building
           command: npm run build:client
       - save_cache:
