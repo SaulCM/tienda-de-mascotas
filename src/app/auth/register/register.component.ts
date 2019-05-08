@@ -8,6 +8,9 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  email: string;
+  password: string;
+
   constructor(public auth: AuthService) {}
 
   ngOnInit() {}
