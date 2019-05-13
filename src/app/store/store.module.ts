@@ -10,7 +10,7 @@ import { ProductosparaperroService } from './productosparaperro.service';
   imports: [
     CommonModule,
     StoreRoutingModule
-  ],
+  ],//
   providers: [ProductosparaperroService]
 })
 export class StoreModule { }
