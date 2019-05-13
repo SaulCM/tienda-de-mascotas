@@ -1,3 +1,22 @@
-<p>
-  catalogo-perros funciona!
-</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let product of productosparaperro$ | async" class="col s12 m3">
+      <div class="card">
+        <div class="card-image">
+          <img [src]="product.imagen">
+          <span class="card-title">{{product.nombre}}</span>
+        </div>
+        <div class="card-content">
+          <p>
+              <b>Precio: </b>{{product.precio}}
+              <b>Peso: </b>{{product.peso}}
+              <b>Descripcion: </b>{{product.descripcion}}
+          </p>
+        </div>
+        <div class="card-action">
+          <a (click)="buyProduct(product)">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
