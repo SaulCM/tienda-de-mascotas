@@ -1,5 +1,11 @@
 <div class="container">
+    <header>
+        <h1>Registrar Alimento</h1>
+      </header> 
   <form #Form="ngForm" class="col s10 offset-s1 m6 offset-m3 l4 offset-l4" novalidate>
+      <div class="column left">
+          <a routerLink="/register">Registrar Articulos</a>
+        </div>
     <div class="row">
       <div class="input-field col s12">
         <input id="tipo" type="text" name="tipo" [(ngModel)]="tipo" required>
@@ -39,9 +45,6 @@
         <button type="button" class="waves-effect waves-light btn right" [disabled]="Form.invalid"
           (click)="auth.registraralimento(tipo,nombre,precio,peso,raza,tamano,descripcion,imagen)">Registrar</button>
       </div>
-    </div>
-    <div class="row center">
-      <a routerLink="/register">Registrar Articulos</a>
     </div>
   </form>
 </div>
