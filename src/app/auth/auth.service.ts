@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import { first, take, switchMap } from 'rxjs/operators';
 
 import { UserService } from '../shared/services/user.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class AuthService {
@@ -14,7 +15,8 @@ export class AuthService {
   constructor(
     private userService: UserService,
     private router: Router,
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private db:AngularFirestore
   ) {}
 
   getAuthUser(): Observable<any> {
@@ -55,6 +57,17 @@ export class AuthService {
       .catch(error => {
         console.error(error.message);
       });
+  }
+  registrarproducto(nombre:String, precio:number){
+    this.db.collection("productosparaperro").add(
+      {nombre,precio}
+    )
+  .then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
   }
 
   logout(): void {
