@@ -58,17 +58,29 @@ export class AuthService {
         console.error(error.message);
       });
   }
-  registrarproducto(nombre:String, precio:number){
+  registraralimento(tipo:String, nombre:String, precio:number, peso:number, raza: String, tamano: String, descripcion:String,imagen:String){
     this.db.collection("productosparaperro").add(
-      {nombre,precio}
-    )
-  .then(function(docRef) {
-      console.log("Document written with ID: ", docRef.id);
-  })
-  .catch(function(error) {
-      console.error("Error adding document: ", error);
-  });
+            {tipo,nombre,precio,peso,raza,tamano,descripcion,imagen}
+          )
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
   }
+  registrararticulo(tipo:String, nombre:String, precio:number,descripcion:String,imagen:String){
+    this.db.collection("productosparaperro").add(
+      {tipo,nombre,precio,descripcion,imagen}
+          )
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+  }
+
 
   logout(): void {
     this.afAuth.auth.signOut().then(() => {
