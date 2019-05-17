@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { PerrosRoutingModule } from './perros-routing.module';
 import { CatalogComponent } from './catalog/catalog.component';
+import { ProductosService } from './productos.service';
 
 @NgModule({
   declarations: [CatalogComponent],
   imports: [
     CommonModule,
     PerrosRoutingModule
-  ]
+  ],
+  providers:[ProductosService]
 })
 export class PerrosModule { }

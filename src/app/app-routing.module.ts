@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'gatos',
-    loadChildren: '/gatos/gatos.module#GatosModule'
+    loadChildren: './gatos/gatos.module#GatosModule'
   }
 ];
 

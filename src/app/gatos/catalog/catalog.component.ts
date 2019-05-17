@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductosService } from '../productos.service';
+import { Productosgato } from 'src/app/shared/models/productosgato';
 
 @Component({
   selector: 'iso-catalog',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  products$ : Observable<Productosgato[]>;
+  constructor(private productsgatoService:ProductosService) { }
+  
+  ngOnInit() :void{
+    this.products$=this.productsgatoService.getProducts();
   }
 
 }
