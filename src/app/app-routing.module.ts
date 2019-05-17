@@ -8,6 +8,14 @@ const routes: Routes = [
     path: '',
     loadChildren: './auth/auth.module#AuthModule',
     // canActivate: [AuthGuard]
+  },
+  {
+    path: 'perros',
+    loadChildren: './perros/perros.module#PerrosModule'
+  },
+  {
+    path: 'gatos',
+    loadChildren: '/gatos/gatos.module#GatosModule'
   }
 ];
 
