@@ -68,6 +68,7 @@ export class AuthService {
         .catch(function(error) {
             console.error("Error adding document: ", error);
         });
+        this.router.navigate(['/register']);
   }
   registrararticulo(tipo:String, nombre:String, precio:number,descripcion:String,imagen:String){
     this.db.collection("productosparaperro").add(
@@ -79,6 +80,7 @@ export class AuthService {
         .catch(function(error) {
             console.error("Error adding document: ", error);
         });
+        this.router.navigate(['/login']);
   }
 
 

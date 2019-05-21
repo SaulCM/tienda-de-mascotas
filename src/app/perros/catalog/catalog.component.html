@@ -1,22 +1,24 @@
 <div class="container">
     <div class="row">
       <div *ngFor="let Productosperro of products$ | async" class="col s12 m3">
-        <div class="card">
-          <div class="card-image">
-            <img [src]="Productosperro.imagen">
-            <span class="card-title">{{Productosperro.nombre}}</span>
-              </div>
-                  <div class="card-content">
-                    <p>
-                        <b>Precio: </b>{{Productosperro.precio}}
-                        <b>Peso: </b>{{Productosperro.peso}}
-                        <b>Raza: </b>{{Productosperro.raza}}
-                        <b>Tamaño: </b>{{Productosperro.tamano}}
-                        <b>Descripcion: </b>{{Productosperro.descripcion}}
-                    </p>
+          <div *ngIf="Productosperro.tipo=='perro'">
+            <div class="card">
+              <div class="card-image">
+                <img [src]="Productosperro.imagen">
+                <span class="card-title">{{Productosperro.nombre}}</span>
                   </div>
-              <div class="card-action">
-                  <a (click)="buyProduct(product)">Comprar</a>
+                      <div class="card-content">
+                        <p>
+                            <b>Precio: </b>{{Productosperro.precio}}
+                            <b>Peso: </b>{{Productosperro.peso}}
+                            <b>Raza: </b>{{Productosperro.raza}}
+                            <b>Tamaño: </b>{{Productosperro.tamano}}
+                            <b>Descripcion: </b>{{Productosperro.descripcion}}
+                        </p>
+                      </div>
+                  <div class="card-action">
+                      <a (click)="buyProduct(product)">Comprar</a>
+              </div>
           </div>
         </div>
       </div>
